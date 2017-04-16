@@ -2,6 +2,8 @@
 
 This is a derivation of Tech2C's excellent [HyperCube 3D printer](http://www.thingiverse.com/thing:1752766).
 
+Only modified parts are contained here. For the full list of parts, refer to the original build instructions.
+
 [![Creative Commons Attribution-NonCommercial 4.0 International License](https://i.creativecommons.org/l/by-nc/4.0/88x31.png "Creative Commons Attribution-NonCommercial 4.0 International License")](http://creativecommons.org/licenses/by-nc/4.0/)
 
 ## Modifications
