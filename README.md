@@ -1,6 +1,6 @@
 # HyperCube 3D Printer M4 Variant
 
-This is a derivation of Tech2C's excellent [HyperCube 3D printer](http://www.thingiverse.com/thing:1752766).
+This is a derivation of Tech2C's excellent [HyperCube 3D printer](http://www.thingiverse.com/thing:1752766). Most noticable differences to original parts are M4 holes for mounting plastic parts to extrusions. Although there are a few other small improvements (see below).
 
 Only modified parts are contained here. For the full list of parts, refer to the original build instructions.
 
