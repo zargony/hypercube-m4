@@ -8,4 +8,9 @@ This is a derivation of Tech2C's excellent [HyperCube 3D printer](http://www.thi
 
 #### M4 holes
 
+All parts that mount to 20x20 extrusions are modified to use M4 screws instead of the default M5. Therefore it's possible to use Type I extrusions which have a 5mm slot and can take M4 nuts max.
+
 #### Round holes
+
+The rectangular slots that allow putting nuts through a part are replaced with round (elongated) holes. There's no need to have large slots if you use t-slot sliding nuts that can be inserted to the slot anywhere.
+
