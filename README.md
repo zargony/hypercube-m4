@@ -14,3 +14,6 @@ All parts that mount to 20x20 extrusions are modified to use M4 screws instead o
 
 The rectangular slots that allow putting nuts through a part are replaced with round (elongated) holes. There's no need to have large slots if you use t-slot sliding nuts that can be inserted to the slot anywhere.
 
+#### Slot guide for Z endstop adjust
+
+The Z endstop adjust now has a small slot guide to prevent twisting.
