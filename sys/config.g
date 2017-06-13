@@ -43,7 +43,7 @@ M83                                 ; ...but relative extruder moves
 ;M557 P4 X141 Y82.5                 ; 5th probe point for levelling
 
 ; Thermistors and heaters
-M305 P0 R4700 T100000 B4000 H0 L0			; bed thermistor
+M305 P0 R4700 T100000 B3950 H0 L0			; bed thermistor
 M305 P1 R4700 T100000 B4725 C7.06e-8 H-100 L-100	; first nozzle thermistor
 M570 S120							; Increase to allow extra heating time if needed
 
