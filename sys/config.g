@@ -17,7 +17,7 @@ M569 P2 S0							; Drive 2 goes backwards
 M569 P3 S1							; Drive 3 goes forwards
 M569 P4 S1							; Drive 4 goes forwards
 ; If you use an endstop switch for Z homing, change Z0 to Z1 in the following line, and see also M558 command later in this file
-M574 X1 Y1 Z1 S0					; set endstop configuration (X and Y and Z endstops, at low end, active low)
+M574 X1 Y1 Z0 S0					; set endstop configuration (X and Y and Z endstops, at low end, active low)
 M667 S1								; set CoreXY mode
 M92 X80 Y80 Z400					; Set axis steps/mm
 M92 E96:96						; Set extruder steps/mm
@@ -32,8 +32,8 @@ G90                                 ; Send absolute coordinates...
 M83                                 ; ...but relative extruder moves
 
 ; Z probe
-;M558 P1 X0 Y0 Z1                    ; Analog Z probe, also used for homing the Z axis
-;G31 Z1.20 P500                      ; Set the probe height and threshold (put your own values here)
+M558 P1 X0 Y0 Z1 H3 F200 T3000      ; Analog Z probe, also used for homing the Z axis
+G31 X20 Y16 Z1.37 P500              ; Set the probe height and threshold (put your own values here)
 ; The following M557 commands are not needed if you are using a bed.g file to perform bed compensation
 ;*** Adjust the XY coordinates in the following M557 commands to suit your build and the position of the Z probe
 ;M557 P0 X60 Y0                      ; Four...
@@ -41,6 +41,7 @@ M83                                 ; ...but relative extruder moves
 ;M557 P2 X222 Y165                   ; ...for bed...
 ;M557 P3 X222 Y0                     ; ...levelling
 ;M557 P4 X141 Y82.5                 ; 5th probe point for levelling
+M557 X20:280 Y20:160 S20
 
 ; Thermistors and heaters
 M305 P0 R4700 T100000 B3950 H0 L0			; bed thermistor

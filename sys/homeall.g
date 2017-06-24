@@ -13,9 +13,9 @@ G1 S1 Y-10                ; fine home Y
 
 ; If you are using a microswitch for Z homing, insert similar code for the Z axis here,
 ; but use lower feed rates suitable for your Z axis.
-G1 S1 Z-240 F400          ; course home Z
-G1 Z4 F80                 ; move away from the endstop
-G1 S1 Z-10                ; fine home Z
+;G1 S1 Z-240 F400          ; course home Z
+;G1 Z4 F80                 ; move away from the endstop
+;G1 S1 Z-10                ; fine home Z
 
 G90                       ; back to absolute mode
 
@@ -25,9 +25,11 @@ G90                       ; back to absolute mode
 ; Adjust the XY coordinates in the following to place the Z probe over a suitable spot,
 ; preferably near the centre of the bed if your Z probe supports that
 
-;G1 X100 Y100 F2000
-;G30
+G1 X150 Y100 F3000
+G30
 ; This file leaves the head at the zprobe trigger height so that you can slip a piece of paper under it and then do G0 Z0 to check the height.
 ; If you prefer to send the printer to X0Y0Z0, un-comment the following lines
 ;G1 X0 Y0 F5000
 ;G1 Z0
+G1 Z10 F200
+G1 F3000
