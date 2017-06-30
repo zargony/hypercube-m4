@@ -25,7 +25,7 @@ M906 X1000 Y1000 Z1000 E1500        ; Set motor currents (mA)
 M201 X1500 Y1500 Z100 E10000        ; Accelerations (mm/s^2)         // dc42:800/800/15/1000       Tech2C:3000/3000/100/10000
 M203 X15000 Y15000 Z400 E3600       ; Maximum speeds (mm/min)        // dc42:15000/15000/100/3600  Tech2C:18000/18000/300/1500
 M566 X600 Y600 Z30 E20              ; Maximum jerk speeds mm/minute  // dc42:600/600/30/20         Tech2C:1200/1200/240/300
-M208 X300 Y180 Z180					; set axis maxima (adjust to suit your machine)
+M208 X300 Y190 Z180					; set axis maxima (adjust to suit your machine)
 M208 X-8 Y-8 Z0 S1				; set axis minima (adjust to make X=0 and Y=0 the edges of the bed)
 G21                                 ; Work in millimetres
 G90                                 ; Send absolute coordinates...
