@@ -9,3 +9,4 @@ Remixed from [this](https://www.thingiverse.com/thing:979154) corner bracket (mo
 Other things related to my customized HyperCube 3D printer build:
 
 - [HyperCube 3D Printer M4 variant](https://www.thingiverse.com/thing:2252459)
+- [HyperCube Mini IR Probe Mount](https://www.thingiverse.com/thing:2431610)

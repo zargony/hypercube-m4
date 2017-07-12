@@ -25,3 +25,4 @@ The Z endstop adjust now has a small slot guide to prevent twisting.
 Other things related to my customized HyperCube 3D printer build:
 
 - [2020 Corner Bracket](https://www.thingiverse.com/thing:2376742)
+- [HyperCube Mini IR Probe Mount](https://www.thingiverse.com/thing:2431610)
