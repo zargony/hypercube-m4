@@ -12,7 +12,7 @@
 			{
 				"type": "http",
 				"name": "Upload to HyperCube",
-				"url": "http://hypercube/rr_upload?name=0%3A${VSDeploy-File}",
+				"url": "http://hypercube/rr_upload?name=0:${VSDeploy-File}",
 				"method": "POST"
 			}
 		]
