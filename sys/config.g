@@ -54,7 +54,7 @@ M307 H1 A629.9 C214.4 D6.5 S1.00 B0     ; heating process parameters for extrude
 
 ; Tool definition
 M563 P0 D0 H1                       ; Define tool 0
-G10 P0 S0 R0                        ; Set tool 0 operating and standby temperatures
+G10 P0 S0 R170                      ; Set tool 0 operating and standby temperatures
 ;*** If you have a dual-nozzle build, un-comment the following 3 lines
 ;M563 P1 D1 H2                      ; Define tool 1
 ;G10 P1 S0 R0                       ; Set tool 1 operating and standby temperatures
