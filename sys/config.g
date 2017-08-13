@@ -49,8 +49,8 @@ M305 P1 R4700 T100000 B4725 C7.06e-8 H-100 L-100	; first nozzle thermistor
 M570 S120							; Increase to allow extra heating time if needed
 
 ; Heating/PID settings
-M307 H0 A148.4 C595.1 D5.0 S1.00 B0      ; heating process parameters for bed
-M307 H1 A629.9 C214.4 D6.5 S1.00 B0     ; heating process parameters for extruder 0
+M307 H0 A161.4 C711.7 D4.0 S1.00 B0      ; heating process parameters for bed
+M307 H1 A821.4 C279.6 D7.0 S1.00 B0      ; heating process parameters for extruder 0
 
 ; Tool definition
 M563 P0 D0 H1                       ; Define tool 0
