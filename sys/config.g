@@ -12,12 +12,12 @@ M575 P1 B57600 S1					; Comms parameters for PanelDue
 
 ; Machine configuration
 M569 P0 S1							; Drive 0 goes forwards (change to S0 to reverse it)
-M569 P1 S0							; Drive 1 goes backwards
-M569 P2 S0							; Drive 2 goes backwards
+M569 P1 S1							; Drive 1 goes forwards
+M569 P2 S1							; Drive 2 goes forwards
 M569 P3 S1							; Drive 3 goes forwards
 M569 P4 S1							; Drive 4 goes forwards
 ; If you use an endstop switch for Z homing, change Z0 to Z1 in the following line, and see also M558 command later in this file
-M574 X1 Y1 Z0 S0					; set endstop configuration (X and Y and Z endstops, at low end, active low)
+M574 X1 Y1 Z0 S0					; set endstop configuration (X and Y and endstops only, at low end, active low)
 M667 S1								; set CoreXY mode
 M92 X80 Y80 Z400					; Set axis steps/mm
 M92 E96:96						; Set extruder steps/mm
@@ -44,13 +44,11 @@ G31 X20 Y16 Z0.855 P500             ; Set the probe height and threshold (put yo
 M557 X30:270 Y30:170 S20
 
 ; Thermistors and heaters
-M305 P0 R4700 T100000 B3950 H0 L0			; bed thermistor
+M305 P0 R4700 T100000 B3950 H0 L0	; bed thermistor
 M305 P1 R4700 T100000 B4725 C7.06e-8 H-100 L-100	; first nozzle thermistor
+M307 H0 A165.0 C725.0 D3.1 S1.00 B0	; heating process parameters for bed
+M307 H1 A754.8 C270.0 D4.3 S1.00 B0	; heating process parameters for extruder 0
 M570 S120							; Increase to allow extra heating time if needed
-
-; Heating/PID settings
-M307 H0 A161.4 C711.7 D4.0 S1.00 B0      ; heating process parameters for bed
-M307 H1 A821.4 C279.6 D7.0 S1.00 B0      ; heating process parameters for extruder 0
 
 ; Tool definition
 M563 P0 D0 H1                       ; Define tool 0

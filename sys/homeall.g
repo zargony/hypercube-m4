@@ -13,9 +13,6 @@ G1 S1 Y-10                ; fine home Y
 
 ; If you are using a microswitch for Z homing, insert similar code for the Z axis here,
 ; but use lower feed rates suitable for your Z axis.
-;G1 S1 Z-240 F400          ; course home Z
-;G1 Z4 F80                 ; move away from the endstop
-;G1 S1 Z-10                ; fine home Z
 
 G90                       ; back to absolute mode
 
