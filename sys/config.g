@@ -19,7 +19,7 @@ M569 P4 S1							; Drive 4 goes forwards
 ; If you use an endstop switch for Z homing, change Z0 to Z1 in the following line, and see also M558 command later in this file
 M574 X1 Y1 Z0 S0					; set endstop configuration (X and Y and endstops only, at low end, active low)
 M667 S1								; set CoreXY mode
-M92 X80 Y80 Z400					; Set axis steps/mm
+M92 X160 Y160 Z400					; Set axis steps/mm
 M92 E96:96						; Set extruder steps/mm
 M906 X1000 Y1000 Z1000 E1500        ; Set motor currents (mA)
 M201 X1500 Y1500 Z100 E10000        ; Accelerations (mm/s^2)         // dc42:800/800/15/1000       Tech2C:3000/3000/100/10000
