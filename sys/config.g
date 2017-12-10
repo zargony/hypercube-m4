@@ -48,8 +48,12 @@ M376 H4                             ; taper bed compensation to zero over first 
 ; Thermistors and heaters
 M305 P0 R4700 T100000 B3950 H0 L0	; bed thermistor
 M305 P1 R4700 T100000 B4725 C7.06e-8 H-100 L-100	; first nozzle thermistor
-M307 H0 A165.0 C725.0 D3.1 S1.00 B0	; heating process parameters for bed
-M307 H1 A754.8 C270.0 D4.3 S1.00 B0	; heating process parameters for extruder 0
+; Heater 0 model: gain 165.0, time constant 725.0, dead time 3.1, max PWM 1.00, mode: PID
+M307 H0 A165.0 C725.0 D4.3 S1.00 B0
+; Heater 1 model: gain 514.8, time constant 203.1, dead time 4.3, max PWM 1.00, mode: PID
+; Computed PID parameters for setpoint change: P22.4, I0.110, D49.3
+; Computed PID parameters for load change: P22.4, I2.205, D49.3
+M307 H1 A514.8 C203.1 D3.1 S1.00 B0
 M570 S120							; Increase to allow extra heating time if needed
 
 ; Tool definition
