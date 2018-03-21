@@ -24,7 +24,7 @@ M92 E96:96						; Set extruder steps/mm
 M906 X1000 Y1000 Z1000 E1500        ; Set motor currents (mA)
 M201 X1500 Y1500 Z100 E10000        ; Accelerations (mm/s^2)         // dc42:800/800/15/1000       Tech2C:3000/3000/100/10000
 M203 X15000 Y15000 Z1200 E3600      ; Maximum speeds (mm/min)        // dc42:15000/15000/100/3600  Tech2C:18000/18000/300/1500
-M566 X600 Y600 Z240 E300            ; Maximum jerk speeds mm/minute  // dc42:600/600/30/20         Tech2C:1200/1200/240/300
+M566 X600 Y600 Z240 E1200           ; Maximum jerk speeds mm/minute  // dc42:600/600/30/20         Tech2C:1200/1200/240/300
 M208 X300 Y190 Z180					; set axis maxima (adjust to suit your machine)
 M208 X-8 Y-8 Z0 S1				; set axis minima (adjust to make X=0 and Y=0 the edges of the bed)
 G21                                 ; Work in millimetres
@@ -66,4 +66,8 @@ G10 P0 S0 R170                      ; Set tool 0 operating and standby temperatu
 
 ;*** If you are using axis compensation, put the figures in the following command
 M556 S78 X0 Y0 Z0                   ; Axis compensation here
+
+M207 S4.2 F3000 Z0.0				; Set firmware retraction details
+M572 D0 S0.2						; set pressure advance
+
 T0									; select first hot end
