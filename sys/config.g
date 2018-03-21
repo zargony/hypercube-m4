@@ -46,6 +46,7 @@ M557 X30:270 Y20:180 S20            ; 300x200 bed, 13x9 points
 M376 H4                             ; taper bed compensation to zero over first 4mm height
 
 ; Thermistors and heaters
+M912 P0 S-21.9						; CPU temperature offset
 M305 P0 R4700 T100000 B3950 H0 L0	; bed thermistor
 M305 P1 R4700 T100000 B4725 C7.06e-8 H-100 L-100	; first nozzle thermistor
 ; Heater 0 model: gain 165.0, time constant 725.0, dead time 3.1, max PWM 1.00, mode: PID
