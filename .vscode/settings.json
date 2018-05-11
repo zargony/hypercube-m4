@@ -1,4 +1,7 @@
 {
+	"files.associations": {
+		"*.g": "gcode"
+	},
 	"deploy": {
 		"packages": [
 			{
