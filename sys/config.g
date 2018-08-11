@@ -26,14 +26,14 @@ M201 X1500 Y1500 Z100 E10000        ; Accelerations (mm/s^2)         // dc42:800
 M203 X15000 Y15000 Z1200 E3600      ; Maximum speeds (mm/min)        // dc42:15000/15000/100/3600  Tech2C:18000/18000/300/1500
 M566 X600 Y600 Z240 E1200           ; Maximum jerk speeds mm/minute  // dc42:600/600/30/20         Tech2C:1200/1200/240/300
 M208 X300 Y190 Z180					; set axis maxima (adjust to suit your machine)
-M208 X-8 Y-8 Z0 S1				; set axis minima (adjust to make X=0 and Y=0 the edges of the bed)
+M208 X-6 Y-8 Z0 S1				; set axis minima (adjust to make X=0 and Y=0 the edges of the bed)
 G21                                 ; Work in millimetres
 G90                                 ; Send absolute coordinates...
 M83                                 ; ...but relative extruder moves
 
 ; Z probe
 M558 P1 X0 Y0 Z1 H3 F150 T5000      ; Analog Z probe, also used for homing the Z axis
-G31 X20 Y16 Z0.725 P500             ; Set the probe height and threshold (put your own values here)
+G31 X20 Y16 Z0.825 P500             ; Set the probe height and threshold (put your own values here)
 ; The following M557 commands are not needed if you are using a bed.g file to perform bed compensation
 ;*** Adjust the XY coordinates in the following M557 commands to suit your build and the position of the Z probe
 ;M557 P0 X60 Y0                     ; Four...
@@ -41,8 +41,8 @@ G31 X20 Y16 Z0.725 P500             ; Set the probe height and threshold (put yo
 ;M557 P2 X222 Y165                  ; ...for bed...
 ;M557 P3 X222 Y0                    ; ...levelling
 ;M557 P4 X141 Y82.5                 ; 5th probe point for levelling
-;M557 X30:270 Y30:170 S120:70       ; 300x200 bed, 3x3 points
-M557 X30:270 Y20:180 S20            ; 300x200 bed, 13x9 points
+;M557 X20:280 Y25:165 S120:70       ; 300x190 bed, 3x3 points
+M557 X20:280 Y25:165 S20            ; 300x190 bed, 14x8 points
 M376 H4                             ; taper bed compensation to zero over first 4mm height
 
 ; Thermistors and heaters
