@@ -14,8 +14,9 @@ M569 P2 S1							; Drive 2 goes forwards
 M569 P3 S1							; Drive 3 goes forwards
 M569 P4 S1							; Drive 4 goes forwards
 ; If you use an endstop switch for Z homing, change Z0 to Z1 in the following line, and see also M558 command later in this file
-M574 X1 Y1 Z0 S0					; set endstop configuration (X and Y and endstops only, at low end, active low)
+M574 X1 Y1 S0						; set endstop configuration (X and Y and endstops only, at low end, active low)
 M667 S1								; set CoreXY mode
+M350 X16 Y16 Z16 E16:16 I1			; set 1/16 microstepping mode with interpolation to 1/256
 M92 X160 Y160 Z400					; Set axis steps/mm
 M92 E94:94						; Set extruder steps/mm
 M906 X1000 Y1000 Z1000 E1500        ; Set motor currents (mA)
@@ -23,13 +24,18 @@ M201 X1500 Y1500 Z100 E10000        ; Accelerations (mm/s^2)         // dc42:800
 M203 X15000 Y15000 Z1200 E3600      ; Maximum speeds (mm/min)        // dc42:15000/15000/100/3600  Tech2C:18000/18000/300/1500
 M566 X600 Y600 Z240 E1200           ; Maximum jerk speeds mm/minute  // dc42:600/600/30/20         Tech2C:1200/1200/240/300
 M208 X300 Y190 Z180					; set axis maxima (adjust to suit your machine)
-M208 X-6 Y-8 Z0 S1				; set axis minima (adjust to make X=0 and Y=0 the edges of the bed)
+M208 X-6 Y-8 Z0 S1					; set axis minima (adjust to make X=0 and Y=0 the edges of the bed)
 G21                                 ; Work in millimetres
 G90                                 ; Send absolute coordinates...
 M83                                 ; ...but relative extruder moves
 
+; Reduce motor power to 50% after being idle for 60s
+M906 I50
+M84 S60
+
 ; Z probe
-M558 P1 X0 Y0 Z1 H3 F150 T5000      ; Analog Z probe, also used for homing the Z axis
+M558 P1 H3 F150 T5000               ; Analog Z probe
+M574 Z1 S2                          ; Set endstops controlled by probe
 G31 X20 Y16 Z0.825 P500             ; Set the probe height and threshold (put your own values here)
 ; The following M557 commands are not needed if you are using a bed.g file to perform bed compensation
 ;*** Adjust the XY coordinates in the following M557 commands to suit your build and the position of the Z probe
@@ -50,11 +56,16 @@ M305 P0 R4700 T100000 B3950 H0 L0	; bed thermistor
 M305 P1 R4700 T100000 B4725 C7.06e-8 H-100 L-100	; first nozzle thermistor
 ; Heater 0 model: gain 165.0, time constant 725.0, dead time 3.1, max PWM 1.00, mode: PID
 M307 H0 A165.0 C725.0 D4.3 S1.00 B0
+M143 H0 S120						; Set safety limit to 120°C
 ; Heater 1 model: gain 514.8, time constant 203.1, dead time 4.3, max PWM 1.00, mode: PID
 ; Computed PID parameters for setpoint change: P22.4, I0.110, D49.3
 ; Computed PID parameters for load change: P22.4, I2.205, D49.3
 M307 H1 A514.8 C203.1 D3.1 S1.00 B0
+M143 H1 S280						; Set safety limit to 280°C
 M570 S120							; Increase to allow extra heating time if needed
+
+; Fans
+M106 P0 S0 I0 F500 L0.1 H-1			; Fan 0 PWM settings
 
 ; Tool definition
 M563 P0 D0 H1                       ; Define tool 0
@@ -69,4 +80,4 @@ M556 S78 X0 Y0 Z0                   ; Axis compensation here
 M207 S4.2 F3000 Z0.0				; Set firmware retraction details
 M572 D0 S0.2						; set pressure advance
 
-T0									; select first hot end
+T0									; select first tool
