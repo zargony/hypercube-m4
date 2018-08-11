@@ -19,7 +19,7 @@ M667 S1								; set CoreXY mode
 M350 X16 Y16 Z16 E16:16 I1			; set 1/16 microstepping mode with interpolation to 1/256
 M92 X160 Y160 Z400					; Set axis steps/mm
 M92 E94:94						; Set extruder steps/mm
-M906 X1000 Y1000 Z1000 E1500        ; Set motor currents (mA)
+M906 X800 Y800 Z800 E1200           ; Set motor currents (mA)
 M201 X1500 Y1500 Z100 E10000        ; Accelerations (mm/s^2)         // dc42:800/800/15/1000       Tech2C:3000/3000/100/10000
 M203 X15000 Y15000 Z1200 E3600      ; Maximum speeds (mm/min)        // dc42:15000/15000/100/3600  Tech2C:18000/18000/300/1500
 M566 X600 Y600 Z240 E1200           ; Maximum jerk speeds mm/minute  // dc42:600/600/30/20         Tech2C:1200/1200/240/300
