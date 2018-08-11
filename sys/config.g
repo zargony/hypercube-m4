@@ -36,7 +36,7 @@ M84 S60
 ; Z probe
 M558 P1 H3 F150 T5000               ; Analog Z probe
 M574 Z1 S2                          ; Set endstops controlled by probe
-G31 X20 Y16 Z0.825 P500             ; Set the probe height and threshold (put your own values here)
+G31 X20 Y16 Z0.875 P500             ; Set the probe height and threshold (put your own values here)
 ; The following M557 commands are not needed if you are using a bed.g file to perform bed compensation
 ;*** Adjust the XY coordinates in the following M557 commands to suit your build and the position of the Z probe
 ;M557 P0 X60 Y0                     ; Four...
