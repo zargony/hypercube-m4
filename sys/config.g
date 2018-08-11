@@ -7,7 +7,7 @@ M540 P0x6E:0x83:0x64:0x58:0x6A:0xD2 ; MAC Address
 M552 P0.0.0.0						; IP address (0 = use DHCP)
 M554 P192.168.1.1                   ; Gateway
 M553 P255.255.255.0                 ; Netmask
-M555 P2                             ; Set output to look like Marlin
+M555 P1                             ; Set output to look like RepRapFirmare
 M575 P1 B57600 S1					; Comms parameters for PanelDue
 
 ; Machine configuration
