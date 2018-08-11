@@ -40,6 +40,8 @@ G31 X20 Y16 Z0.825 P500             ; Set the probe height and threshold (put yo
 ;M557 P4 X141 Y82.5                 ; 5th probe point for levelling
 ;M557 X20:280 Y25:165 S120:70       ; 300x190 bed, 3x3 points
 M557 X20:280 Y25:165 S20            ; 300x190 bed, 14x8 points
+
+M375                                ; load heightmap.csv for mesh grid compensation
 M376 H4                             ; taper bed compensation to zero over first 4mm height
 
 ; Thermistors and heaters
