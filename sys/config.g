@@ -68,7 +68,7 @@ M570 S120							; Increase to allow extra heating time if needed
 M106 P0 S0 I0 F500 L0.1 H-1			; Fan 0 PWM settings
 
 ; Tool definition
-M563 P0 D0 H1                       ; Define tool 0
+M563 P0 D0 H1 F0                    ; Define tool 0
 G10 P0 S0 R170                      ; Set tool 0 operating and standby temperatures
 ;*** If you have a dual-nozzle build, un-comment the following 3 lines
 ;M563 P1 D1 H2                      ; Define tool 1
