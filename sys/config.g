@@ -65,7 +65,9 @@ M143 H1 S280						; Set safety limit to 280°C
 M570 S120							; Increase to allow extra heating time if needed
 
 ; Fans
-M106 P0 S0 I0 F500 L0.1 H-1			; Fan 0 PWM settings
+M106 P0 S0 L0.1 H-1 C"Part Fan"		; Fan 0 (part fan) PWM settings
+M106 P1 S1 H1 T50 C"Hotend Fan"		; Fan 1 (hotend fan) thermostatic control settings
+M106 P2 S0.25 L0.1 H-1 C"Light"		; Fan 2 (Light) PWM settings
 
 ; Tool definition
 M563 P0 D0 H1 F0                    ; Define tool 0
