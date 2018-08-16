@@ -51,7 +51,7 @@ M375                                ; load heightmap.csv for mesh grid compensat
 M376 H4                             ; taper bed compensation to zero over first 4mm height
 
 ; Thermistors and heaters
-M912 P0 S-21.9						; CPU temperature offset
+;M912 P0 S-21.9						; CPU temperature offset
 M305 P0 R4700 T100000 B3950 H0 L0	; bed thermistor
 M305 P1 R4700 T100000 B4725 C7.06e-8 H-100 L-100	; first nozzle thermistor
 ; Heater 0 model: gain 138.8, time constant 685.9, dead time 3.3, max PWM 1.00, calibration voltage 23.8, mode PID, inverted no, frequency default
