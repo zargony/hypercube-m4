@@ -21,12 +21,14 @@ G90                       ; back to absolute mode
 ; The following code assumes you are using a Z probe to do Z homing. Remove it if you are using a microswitch.
 ; Adjust the XY coordinates in the following to place the Z probe over a suitable spot,
 ; preferably near the centre of the bed if your Z probe supports that
-
 G1 X150 Y100 F5000
 G30
+
 ; This file leaves the head at the zprobe trigger height so that you can slip a piece of paper under it and then do G0 Z0 to check the height.
 ; If you prefer to send the printer to X0Y0Z0, un-comment the following lines
 ;G1 X0 Y0 F5000
 ;G1 Z0
-G1 Z10 F300
+
+; Move to the front center of the bed where oozing filament gets cut off when the print starts
+G1 Y0 F5000
 G1 F5000
