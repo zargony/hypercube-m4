@@ -54,15 +54,16 @@ M376 H4                             ; taper bed compensation to zero over first 
 M912 P0 S-21.9						; CPU temperature offset
 M305 P0 R4700 T100000 B3950 H0 L0	; bed thermistor
 M305 P1 R4700 T100000 B4725 C7.06e-8 H-100 L-100	; first nozzle thermistor
-; Heater 0 model: gain 165.0, time constant 725.0, dead time 3.1, max PWM 1.00, mode: PID
-M307 H0 A165.0 C725.0 D4.3 S1.00 B0
+; Heater 0 model: gain 138.8, time constant 685.9, dead time 3.3, max PWM 1.00, calibration voltage 23.8, mode PID, inverted no, frequency default
+; Computed PID parameters for setpoint change: P268.2, I5.646, D617.6
+; Computed PID parameters for load change: P2
+M307 H0 A138.8 C685.9 D3.3 B0 S1.00 V23.8
 M143 H0 S120						; Set safety limit to 120°C
-; Heater 1 model: gain 514.8, time constant 203.1, dead time 4.3, max PWM 1.00, mode: PID
-; Computed PID parameters for setpoint change: P22.4, I0.110, D49.3
-; Computed PID parameters for load change: P22.4, I2.205, D49.3
-M307 H1 A514.8 C203.1 D3.1 S1.00 B0
+; Heater 1 model: gain 533.0, time constant 195.3, dead time 4.0, max PWM 1.00, calibration voltage 24.1, mode PID, inverted no, frequency default
+; Computed PID parameters for setpoint change: P16.2, I0.575, D45.8
+; Computed PID parameters for load change: P16.
+M307 H1 A533.0 C195.3 D4.0 B0 S1.00 V24.1
 M143 H1 S280						; Set safety limit to 280°C
-M570 S120							; Increase to allow extra heating time if needed
 
 ; Fans
 M106 P0 S0 L0.1 H-1 C"Part Fan"		; Fan 0 (part fan) PWM settings
