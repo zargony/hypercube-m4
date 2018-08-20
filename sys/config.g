@@ -59,10 +59,10 @@ M305 P1 R4700 T100000 B4725 C7.06e-8 H-100 L-100	; first nozzle thermistor
 ; Computed PID parameters for load change: P2
 M307 H0 A138.8 C685.9 D3.3 B0 S1.00 V23.8
 M143 H0 S120						; Set safety limit to 120°C
-; Heater 1 model: gain 533.0, time constant 195.3, dead time 4.0, max PWM 1.00, calibration voltage 24.1, mode PID, inverted no, frequency default
-; Computed PID parameters for setpoint change: P16.2, I0.575, D45.8
-; Computed PID parameters for load change: P16.
-M307 H1 A533.0 C195.3 D4.0 B0 S1.00 V24.1
+; Heater 1 model: gain 746.6, time constant 277.1, dead time 4.3, max PWM 1.00, calibration voltage 24.0, mode PID, inverted no, frequency default
+; Computed PID parameters for setpoint change: P15.5, I0.452, D46.4
+; Computed PID parameters for load change: P15.
+M307 H1 A746.6 C277.1 D4.3 B0 S1.00 V24.0
 M143 H1 S280						; Set safety limit to 280°C
 
 ; Fans
