@@ -1,4 +1,4 @@
-# 2020 Corner Bracket
+# 2020 Corner Bracket M4
 
 Simple corner bracket for 2020 I-Type extrusions (slot 5, M4 screws).
 
