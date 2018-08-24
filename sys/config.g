@@ -80,7 +80,7 @@ G10 P0 S0 R170                      ; Set tool 0 operating and standby temperatu
 ;*** If you are using axis compensation, put the figures in the following command
 M556 S78 X0 Y0 Z0                   ; Axis compensation here
 
-M207 S4.2 F3000 Z0.0				; Set firmware retraction details
+M207 S2.0 F3000 Z0.0				; Set firmware retraction details
 M572 D0 S0.2						; set pressure advance
 
 T0									; select first tool
