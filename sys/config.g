@@ -11,14 +11,14 @@ M575 P1 B57600 S1					; Comms parameters for PanelDue
 M569 P0 S1							; Drive 0 goes forwards (change to S0 to reverse it)
 M569 P1 S1							; Drive 1 goes forwards
 M569 P2 S1							; Drive 2 goes forwards
-M569 P3 S1							; Drive 3 goes forwards
-M569 P4 S1							; Drive 4 goes forwards
+M569 P3 S0							; Drive 3 goes backwards
+M569 P4 S0							; Drive 4 goes backwards
 ; If you use an endstop switch for Z homing, change Z0 to Z1 in the following line, and see also M558 command later in this file
 M574 X1 Y1 S0						; set endstop configuration (X and Y and endstops only, at low end, active low)
 M667 S1								; set CoreXY mode
 M350 X16 Y16 Z16 E16:16 I1			; set 1/16 microstepping mode with interpolation to 1/256
 M92 X160 Y160 Z400					; Set axis steps/mm
-M92 E94:94						; Set extruder steps/mm
+M92 E405:405						; Set extruder steps/mm
 M906 X800 Y800 Z800 E1200           ; Set motor currents (mA)
 M201 X1500 Y1500 Z100 E10000        ; Accelerations (mm/s^2)         // dc42:800/800/15/1000       Tech2C:3000/3000/100/10000
 M203 X15000 Y15000 Z1200 E3600      ; Maximum speeds (mm/min)        // dc42:15000/15000/100/3600  Tech2C:18000/18000/300/1500
@@ -81,6 +81,6 @@ G10 P0 S0 R170                      ; Set tool 0 operating and standby temperatu
 M556 S78 X0 Y0 Z0                   ; Axis compensation here
 
 M207 S2.5 F3000 Z0.0				; Set firmware retraction details
-M572 D0 S0.2						; set pressure advance
+;M572 D0 S0.2						; set pressure advance
 
 T0									; select first tool
